@@ -70,15 +70,21 @@ $classes = $classeRepository->findAll();
             'form' => $form,
         ]);
     }
-
-    #[Route('/{nsc}', name: 'app_student_delete', methods: ['POST'])]
-    public function delete(Request $request, Student $student, EntityManagerInterface $entityManager): Response
+    #[Route('/tt', name: 'app_student_edit', methods: ['GET', 'POST'])]
+    public function deletee(Request $request, Student $student, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$student->getNsc(), $request->getPayload()->getString('_token'))) {
-            $entityManager->remove($student);
+        $form = $this->createForm(Student2Type::class, $student);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
+
+            return $this->redirectToRoute('app_student_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->redirectToRoute('app_student_index', [], Response::HTTP_SEE_OTHER);
+        return $this->render('student/edit.html.twig', [
+            'student' => $student,
+            'form' => $form,
+        ]);
     }
 }
