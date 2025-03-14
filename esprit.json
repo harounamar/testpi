@@ -1,0 +1,12 @@
+{
+  "classe": {
+    "id": "int",
+    "name": "string",
+    "salle": "string"
+  },
+  "student": {
+    "nsc": "string",
+    "email": "string",
+    "class": "int"
+  }
+}

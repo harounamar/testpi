@@ -1,0 +1,17 @@
+{{ dump(form.class) }}
+{{ form_start(form) }}
+{{ form_label(form.nsc , "Numéro d'inscription ") }}
+{{ form_widget(form.nsc) }}
+{{ form_label(form.email , "Student email") }}
+{{ form_widget(form.email) }}
+{# {{ form_label(form.class , "Classes") }}
+<select class="form-control" name="{{ form.class.vars.full_name }}">
+    <option value="">Choisir une classe</option>
+    {% for class in classes %}
+        <option value="{{ class.id }}" {% if class.id == form.class.vars.value %} selected {% endif %}>
+            {{ class.name }}
+        </option>
+    {% endfor %}
+</select>#}
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

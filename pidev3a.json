@@ -1,0 +1,26 @@
+[
+{"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"pidev3a"},
+{"type":"table","name":"classe","database":"pidev3a","data":
+[
+
+]
+}
+,{"type":"table","name":"doctrine_migration_versions","database":"pidev3a","data":
+[
+{"version":"DoctrineMigrations\\Version20250131120403","executed_at":"2025-01-31 12:04:08","execution_time":"2022"}
+]
+}
+,{"type":"table","name":"messenger_messages","database":"pidev3a","data":
+[
+
+]
+}
+,{"type":"table","name":"student","database":"pidev3a","data":
+[
+{"nsc":"1254MJ","email":"student1@gmail.com","class_id":null},
+{"nsc":"874JT","email":"student2@gmail.com","class_id":null},
+{"nsc":"JMT12587499","email":"foulen@gmail.com","class_id":null}
+]
+}
+]
